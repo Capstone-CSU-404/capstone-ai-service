@@ -15,7 +15,6 @@ SKILLS_CATALOG_PATH = Path(settings.MODEL_DIR) / "skills_catalog.json"
 
 @lru_cache(maxsize=1)
 def _get_skills_catalog() -> set[str]:
-    """Load skills catalog sekali, reuse selamanya."""
     if not SKILLS_CATALOG_PATH.exists():
         raise FileNotFoundError(f"skills_catalog.json tidak ditemukan: {SKILLS_CATALOG_PATH}")
     with open(SKILLS_CATALOG_PATH, "r") as f:
