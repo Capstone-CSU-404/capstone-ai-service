@@ -33,7 +33,6 @@ async def upload_pdf(file: UploadFile = File(...)):
                 status_code=400,
                 detail="Text extraction failed. Ensure the PDF contains selectable text.",
             )
-        chunks = chunk_text(raw_text)
 
         skills_text = extract_skills_from_pdf(file_bytes)
         skillset = [s.strip() for s in skills_text.split() if s.strip()]
