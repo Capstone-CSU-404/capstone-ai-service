@@ -32,7 +32,7 @@ async def predict_from_github(payload: GithubPredictRequest):
     repo = repo.replace(".git", "") 
 
     try:
-        github_token = getattr(settings, "GITHUB_TOKEN", "")
+        github_token = getattr(settings, "GITHUB_PAT_TOKEN", "")
         skills_text = await extract_skills_from_github(owner, repo, github_token)
         
         skillset = [s.strip() for s in skills_text.split() if s.strip()]
