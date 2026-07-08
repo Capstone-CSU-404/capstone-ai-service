@@ -16,3 +16,6 @@ class JobRoleRecommendRequest(BaseModel):
 class JobRoleRecommendResponse(BaseModel):
     extracted_skills: list[str]
     top_roles: list[RankedRole]
+
+class GithubPredictRequest(BaseModel):
+    github_url: str

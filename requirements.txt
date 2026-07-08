@@ -5,9 +5,10 @@ google-genai
 pydantic
 python-dotenv
 fastapi-swagger-ui-theme
-tensorflow; python_version < "3.14"
+tensorflow
+python_version < "3.14"
 joblib
-scikit-learn==1.6.1
+scikit-learn==1.9.0
 PyMuPDF
 langchain-text-splitters
 supabase

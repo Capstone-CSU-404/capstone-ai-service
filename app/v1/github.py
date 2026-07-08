@@ -13,13 +13,11 @@ from app.schemas.job_role import (
     JobRoleRecommendResponse,
     RankedRole,
     SkillItem,
+    GithubPredictRequest
 )
 from app.core.config import settings
 
 router = APIRouter(prefix="/document", tags=["Github Repository Extraction"])
-
-class GithubPredictRequest(BaseModel):
-    github_url: str
 
 @router.post("/predict-github", response_model=JobRoleRecommendResponse)
 async def predict_from_github(payload: GithubPredictRequest):
