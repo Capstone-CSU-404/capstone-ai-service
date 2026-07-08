@@ -1,7 +1,6 @@
 import traceback
 from fastapi import APIRouter, UploadFile, File, HTTPException
 from app.services.document.extractor import extract_text_from_pdf
-from app.services.document.chunker import chunk_text
 from app.services.document.extract_skills_from_pdf import extract_skills_from_pdf
 from app.services.job_role.predictor import (
     rank_job_roles,
